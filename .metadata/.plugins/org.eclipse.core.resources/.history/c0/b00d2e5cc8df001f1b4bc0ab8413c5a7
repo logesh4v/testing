@@ -1,0 +1,14 @@
+package oop;
+
+public class SavingsBankAccount extends BankAccount {
+	private double intertestRate;
+	
+	public SavingBankAccount()
+	{
+		super(name,accnum,amt);
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,24 @@
+package Junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CalculatorTest {
+
+	@Test //annotation
+	void testAdd() {
+		Calculator calc = new Calculator();
+		calc.add(5, 10);//functionality we added
+		//assertions -match with the expected and actual result
+		assertEquals(15,calc.add(5,10));//test case for add
+	}
+
+	@Test
+	void testSub() {
+		Calculator calc = new Calculator();
+		
+		assertEquals(-5,calc.sub(5,10));
+	}
+
+}

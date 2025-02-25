@@ -1,0 +1,39 @@
+package Junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class OrderServicesTest {
+
+	@Test
+	void testGetStock() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetStock() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testGetDiscount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testSetDiscount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testCalPrice() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	void testPlaceOrder() {
+		fail("Not yet implemented");
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.ems.EMS.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+ 
+import com.ems.EMS.model.Employee;
+ 
+@Service
+public class EmployeeService {
+	//@Service will mark this class as Spring service
+	//@Component -> @Service is specialised version of component annotaion
+	//@Autowired -> tell sprint to inject employee bean
+ 
+	@Autowired
+	private Employee employee;
+	public void printEmpDetails() {
+		System.out.println("Employee Details : " + employee);
+	}
+	public double calAnnualSalary() {
+		return employee.getSalary()*12;
+	}
+	public List<String> getEmployeeSkills(){
+		return employee.getSkills();
+	}
+	public boolean isEligiblePromotion() {
+		return employee.getDesignation().equalsIgnoreCase("Senior developer");
+	}
+}

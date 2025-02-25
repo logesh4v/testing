@@ -1,0 +1,210 @@
+package Junit;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+class Orderservicetest2 {
+
+    private OrderService2 orderService2;
+
+    @BeforeEach //initialize orderservice2 before each test case
+    public void setUp() {
+        orderService2 = new OrderService2();
+    }
+
+    // Test to check valid order placements with different quantities
+    @ParameterizedTest
+    @ValueSource(ints = {1, 4, 7, 10})
+    void TestValidOrderPlacements(int quantity) {
+        boolean result = orderService2.placeOrder(quantity);
+        assertTrue(result, "Order should be placed successfully");
+        assertEquals(10 - quantity, orderService2.getStock(), "Stock should be reduced by the ordered quantity");
+    }
+
+    // Test to check for boundary conditions for placing orders
+    @ParameterizedTest
+    @ValueSource(ints = {11, 13, 15})
+    void TestBoundaryConditions(int quantity) {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+            orderService2.placeOrder(quantity);
+        });
+        assertEquals("Insufficient stock", e.getMessage());
+    }
+
+    // Test to check for invalid discounts
+    @ParameterizedTest
+    @ValueSource(doubles = {-0.5, 1.5, 2.0})
+    void TestInvalidDiscounts(double discount) {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+            orderService2.setDiscount(discount);
+        });
+        assertEquals("Discount must be between 0 and 1.", e.getMessage());
+    }
+
+    // Test to check for invalid stock values
+    @ParameterizedTest
+    @ValueSource(ints = {-5, -10, -15})
+    void TestInvalidStockValues(int stock) {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+            orderService2.setStock(stock);
+        });
+        assertEquals("Stock cannot be negative.", e.getMessage());
+    }
+
+    // Test for negative price and negative quantity using CSV source
+    @ParameterizedTest
+    @CsvSource({
+        "100.0, 5",
+        "50.0, -2",
+        "100.0, -5"
+    })
+    void TestNegativePriceOrQuantity(double price, int quantity) {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+            orderService2.calPrice(price, quantity);
+        });
+        if (price < 0) {
+            assertEquals("Price cannot be negative.", e.getMessage());
+        } else if (quantity < 0) {
+            assertEquals("Quantity cannot be negative", e.getMessage());
+        }
+    }
+}
+
+//class Orderservicetest2 {
+// 
+//	private OrderService2 orderService2;
+//	@BeforeEach //initialize orderservice2 before each test caser
+//	public void setUp() {
+//		orderService2 = new OrderService2();
+//	}
+//	@Test
+//	public void TestCalPrice_ValidInputs() {
+//		double price = 100.00;
+//		int quantity = 2;
+//		double expectedPrice = price*quantity*(1-orderService2.getDiscount());
+//		assertEquals(expectedPrice, orderService2.calPrice(price, quantity));
+//		//checking whether calPrice is calculating the price correctly or not
+//	}
+//	//Test case -> passing quantity = 0
+//	@Test
+//    void TestCalZeroQuantity() {
+//        double total = orderService2.calPrice(100.00, 0);
+//        assertEquals(0, total, "Total should be 0 when quantity is 0");
+//    }
+//	//Test case -> successfully placing order
+//	//Sufficient Stocks
+//	@Test
+//	void TestSuccessfullyPlaced() {
+//		boolean result = orderService2.placeOrder(5);
+//		assertTrue(result, "Order should be placed successfully");
+//		assertEquals(5, orderService2.getStock(), "Stock should be reduced by the ordered quantity");
+//	}
+//
+//	//Test where price is negative
+//	void TestNegativePrice() {
+//        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//            orderService2.calPrice(-100.00, 2);
+//        });
+//        assertEquals("Price cannot be negative.", e.getMessage());
+//    }
+//
+//	//Boundary test case edge cases
+//	//edge case -> quantity exactly same as stock
+//	 @Test
+//	    void TestPlaceOrderExactStock() {
+//	        boolean result = orderService2.placeOrder(10);
+//	        assertTrue(result, "Order should be placed successfully");
+//	        assertEquals(0, orderService2.getStock(), "Stock should be 0 after ordering the exact stock amount");
+//	    }
+// 
+// 
+//	//edge case -> order just below stock limit i.e. 10
+//	  @Test
+//	    void TestPlaceOrderBelowStockLimit() {
+//	        boolean result = orderService2.placeOrder(9);
+//	        assertTrue(result, "Order should be placed successfully");
+//	        assertEquals(1, orderService2.getStock(), "Stock should be reduced to 1 after ordering 9 out of 10");
+//	    }
+//
+//
+//
+////expecp class
+//
+//@Test
+//void TestPlaceOrderBeyondStock() {
+//	int stockOrder = 15;
+//    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//        orderService2.placeOrder(stockOrder);
+//    });
+//    assertEquals("Insufficient stock", e.getMessage());
+//}
+//
+//// Test set stock to negative value
+//@Test
+//void TestSetNegativeStock() {
+//	int stockOrder = -5;
+//    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//        orderService2.setStock(stockOrder);
+//    });
+//    assertEquals("Stock cannot be negative.", e.getMessage());
+//}
+//// Test set discount to an invalid value 
+//@Test
+//void TestSetInvalidDiscount() {
+//	double discount = 1.5;
+//    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//        orderService2.setDiscount(discount);
+//    });
+//    assertEquals("Discount must be between 0 and 1.", e.getMessage());
+//}
+//
+//
+////Test where price is negative
+//void TestNegativePrice1() {
+//	int quantity = 4;
+//	double price = -100.00;
+//    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//        orderService2.calPrice(price, quantity);
+//    });
+//    assertEquals("Price cannot be negative.", e.getMessage());
+//}
+//
+// //Test where negative is negative
+//void TestNegativeQuantity() {
+//	int quantity = -4;
+//	double price = 100.00;
+//    IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> {
+//        orderService2.calPrice(price, quantity);
+//    });
+//    assertEquals("Quantity cannot be negative", e.getMessage());
+//}
+//
+//}
+//
+//
+//
+//
+//parameterized test
+//csv source -cal price--4 sets
+//price,1,expected
+
+//test to check valid order placements with different quantites
+//(1,4,7,10)
+
+//test to check for boundary conditions for placing orders
+//values-11,13,15
+
+//test to check for invaild discounts
+//values -0.5,1.5,2.0
+
+//test to check invaild stock values
+//values->-5,-10,-15
+
+//test fir negative price and negative ques
+//csv source -cal price -4 sets
+//100.0,5
+//50.0,-2
+//100.0,-5

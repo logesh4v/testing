@@ -1,0 +1,36 @@
+package com.ems.EMS;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.ems.EMS.model.Employee;
+import com.ems.EMS.model.HR;
+import com.ems.EMS.model.Payroll;
+import com.ems.EMS.model.Performance;
+
+
+@SpringBootApplication
+public class EmsApplication {
+
+	public static void main(String[] args) {
+//		SpringApplication.run(EmsApplication.class, args);
+		ApplicationContext context =new ClassPathXmlApplicationContext("emsConfiguration.xml");
+		
+		Employee employee = context.getBean("employee", Employee.class);
+        System.out.println(employee);
+		Payroll payroll=context.getBean("Payroll",Payroll.class);
+		Performance performance=context.getBean("performance",Performance.class);
+		HR hr = context.getBean("hr",HR.class);
+		
+		
+		System.out.println("emp");
+		System.out.println("Calculated salary:"+payroll.calculateSalary());
+		System.out.println(performance);
+		hr.displayEmployee();
+		
+		
+		
+		
+	}
+
+}

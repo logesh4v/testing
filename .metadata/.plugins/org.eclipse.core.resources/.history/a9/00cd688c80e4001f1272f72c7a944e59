@@ -1,0 +1,21 @@
+package Colle2;
+import java.util.*;
+
+public class Test {
+	public static void main (String args[])
+	{
+		Queue<Integer> numberString=new PriorityQueue<>();
+		number.add(6);
+		number.add(2);
+		number.add(3);
+		
+		while(number.isEmpty())
+		{
+			System.out.println(number.poll());
+		}
+	}
+
+}
+
+//internally--comparable interface
+//Assigning-invest value--highest priority
