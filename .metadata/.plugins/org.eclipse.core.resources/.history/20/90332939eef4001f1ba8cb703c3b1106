@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Bookstore Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #0066cc, #33ccff);
+        }
+ 
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+ 
+        .registration-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+ 
+        h2 {
+            margin: 0;
+            color: #333;
+        }
+ 
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+ 
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        label {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+ 
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+ 
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+ 
+        button:hover {
+            background: #004c99;
+        }
+ 
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+ 
+        .login-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+ 
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+ 
+<script>
+function example() {
+	let x=10;
+	if(true) {
+		let x=20;
+		console.log(x);
+	}
+	console.log(x);
+}
+
+function example2() {
+	var x=10;
+	if(true) {
+		var x=20;
+		console.log(x);
+	}
+	console.log(x);
+}
+
+function example3() {
+	const x=10;
+	if(true) {
+		x=20;
+		console.log(x);
+	}
+	console.log(x);
+}
+
+
+
+//let name = "Tanuj";
+//console.log("Hello, " + name + " Welcome");
+
+//name = "Tanuj";
+//console.log(`Hello, ${name} Welcome`);
+
+let textt = "This is line1. \n" + "This is line2.";
+console.log(textt);
+
+text1 = `This is line1.
+This is line2.`;
+console.log(text1);
+
+let product = "Laptop";
+let price = 55000;
+console.log(`The price of ${product} is ${price}`);
+
+console.log("5" == 5); // true
+
+console.log("5" === 5); // false
+
+console.log("5" != 5); // false
+
+console.log("5" !== 5); // true
+
+console.log(5 > 3); // true
+console.log(5 < 3); // false
+
+console.log(5 > 3 && 5 > 2); // true
+
+console.log(5 > 3 || 5 < 2); // true
+
+console.log(!(5 > 3)); // false
+
+//String methods
+let text = "   Hello World   ";
+console.log(text.length);
+console.log(text.toUpperCase());
+console.log(text.toLowerCase());
+console.log(text.trim());
+
+text = "Hello JavaScript";
+console.log(text.slice(2, 10));
+console.log(text.replace("Java", "Type"));
+
+let textArray = "value1, value2, value3";
+console.log(textArray.split(", "));
+
+
+//Array methods
+let numbers = [10, 20, 30, 40, 50];
+let gadgets = ["Laptop", "Smartphone", "TV"];
+console.log(gadgets[2]);
+
+gadgets.push("Earphone");
+console.log(gadgets);
+
+gadgets.pop();
+console.log(gadgets);
+
+gadgets.shift();
+console.log(gadgets);
+
+gadgets.unshift("Mic");
+console.log(gadgets);
+
+console.log(gadgets.indexOf("Smartphone"));
+console.log(gadgets.includes("Earphone"));
+
+console.log(gadgets.slice(1, 2));
+
+gadgets.splice(1, 2);
+console.log(gadgets);
+
+console.log(gadgets.join(" - "));
+
+gadgets.reverse();
+console.log(gadgets);
+
+gadgets.sort();
+console.log(gadgets);
+
+gadgets.forEach(gadget => console.log(gadget));
+
+let squaredNumbers = numbers.map(num => num * num);
+console.log(squaredNumbers);
+
+
+// Object with function as property
+let user = {
+        name: "Tanuj",
+        greet: function() {
+            console.log(`Hello, my name is ${this.name}`);
+        }
+    };
+
+    user.greet();
+
+    // Object Destructuring -> ES6
+    let person = {
+        name: "Tanuj",
+        age: 25,
+        city: "New Delhi"
+    };
+
+    let { name, age, city } = person;
+    console.log(name); // Tanuj
+    console.log(age);  // 25
+    console.log(city); // ND
+
+    // Object Spread Operator (ES6)
+    let obj1 = { a: 12, b: 15 };
+    let obj2 = { ...obj1, c: 20 };
+
+    console.log(obj2); // { a: 12, b: 15, c: 20 }
+
+    // Merging objects
+    let userP = { name: "Tanuj", age: 25 };
+    let userLoc = { city: "New Delhi", country: "India" };
+
+    let userAllD = { ...userP, ...userLoc };
+
+    console.log(userAllD); 
+    
+    
+    
+    
+    
+    
+    
+   
+
+    function testOperators() {
+
+        // Arithmetic Operators
+
+
+        let name = "Logesh";
+
+        console.log("Hello, " + name + " Welcome");
+
+        name = "logesh";
+
+        console.log(`Hello, ${name} Welcome`);
+
+        let text = "This is line1. \n" + "This is line2.";
+
+        console.log(text);
+
+        text = `This is line1.
+
+		This is line2.`;
+
+        console.log(text);
+
+        let product = "Laptop";
+
+        let price = 55000;
+
+        console.log(`The price of ${product} is ${price}`);
+
+
+        let a = 10;
+
+        let b = 20;
+
+        let c = "20";
+
+        console.log('Arithmetic Operators:');
+
+        console.log('a + b =', a + b);
+
+        console.log('a - b =', a - b);
+
+        console.log('a * b =', a * b);
+
+        console.log('a / b =', a / b);
+
+        console.log('a % b =', a % b);
+
+        console.log('a++ =', a++);
+
+        console.log('++a =', ++a);
+
+        console.log('a-- =', a--);
+
+        console.log('--a =', --a);
+
+        
+
+        // Relational Operators
+
+        console.log('\nRelational Operators:');
+
+        console.log('a == b:', a == b);
+
+        console.log('b===c: ', b===c);
+
+        console.log('a != b:', a != b);
+
+        console.log('a > b:', a > b);
+
+        console.log('a < b:', a < b);
+
+        console.log('a >= b:', a >= b);
+
+        console.log('a <= b:', a <= b);
+
+        // Logical Operators
+
+        let x = true;
+
+        let y = false;
+
+        console.log('\nLogical Operators:');
+
+        console.log('x && y:', x && y);
+
+        console.log('x || y:', x || y);
+
+        console.log('!x:', !x);
+
+
+        let arr = [1, 6, 3, 4, 5];
+
+        arr.push(6); // Add element to the end
+
+        arr.unshift(0); // Add element to the beginning
+
+        let removedElement = arr.pop(); // Remove last element
+
+        let firstElement = arr.shift(); // Remove first element
+
+        let slicedArr = arr.slice(1, 3); // Slice array from index 1 to 3
+
+        let joinedArr = arr.join('-'); // Join array elements with '-'
+
+        let reversedArr = arr.reverse(); // Reverse the array
+
+        let mappedArr = arr.map(num => num * 2); // Map each element to its double
+
+        let sortedArr = arr.sort();
+
+        console.log('\nArray Operations:');
+
+        console.log('Original Array: [1, 6, 3, 4, 5]');
+
+        console.log('After push(6):', arr);
+
+        console.log('After unshift(0):', arr);
+
+        console.log('Removed Last Element (pop):', removedElement);
+
+        console.log('Removed First Element (shift):', firstElement);
+
+        console.log('Final Array:', arr);
+
+        console.log('Sliced Array (index 1 to 3):', slicedArr);
+
+        console.log('Joined Array (with "-"):', joinedArr);
+
+        console.log('Reversed Array:', reversedArr);
+
+        console.log('Mapped Array (elements doubled):', mappedArr);
+
+        console.log('Sorted Array (ascending):', sortedArr);
+
+        console.log('\nforEach Method:');
+
+        arr.forEach((element, index) => {
+
+            console.log(`Element at index ${index}: ${element}`);
+
+        });
+
+        let str = "Hello, Genpact!";
+
+        let upperStr = str.toUpperCase(); // Convert to uppercase
+
+        let lowerStr = str.toLowerCase(); // Convert to lowercase
+
+        let subStr = str.slice(0, 5); // Extract substring
+
+        let replacedStr = str.replace("Genpact", "World"); // Replace substring
+
+        let includesStr = str.includes("Genpact"); // Check if substring exists
+
+        let splitStr = str.split(", "); // Split string into array
+
+        console.log('\nString Methods:');
+
+        console.log('Original String:', str);
+
+        console.log('Uppercase:', upperStr);
+
+        console.log('Lowercase:', lowerStr);
+
+        console.log('Slice:', subStr);
+
+        console.log('Replaced String:', replacedStr);
+
+        console.log('Includes "Genpact":', includesStr);
+
+        console.log('Split String:', splitStr);
+
+
+        let person = {
+
+        	      name: "Logesh",
+
+        	      age: 23,
+
+        	      city: "Jaipur",
+
+        	      hasvotercard: true
+
+        	    };
+
+        	    delete person.hasvotercard;
+
+        	    console.log(person); 
+
+        	    let user = {
+
+        	      name3: "Mohan",
+
+        	      greet() {
+
+        	    console.log(`Hello, my name is ${this.name3}`);
+
+        	      }
+
+        	    };
+
+        	    user.greet();
+
+        	    let person1 = {
+
+        	            name4: "irfan",
+
+        	            age4: 24,
+
+        	            city4: "HD"
+
+        	        };
+
+        	    let { name4, age4, city4 } = person1;
+
+        	    console.log(name4); 
+
+        	    console.log(age4);  
+
+        	    console.log(city4); 
+
+        	    let obj1 = { a: 10, b: 15 };
+
+        	    let obj2 = { ...obj1, c: 20 };
+
+        	    console.log(obj2); 
+
+        	    let userInfo = { name2: "logesh", age2: 22 };
+
+        	    let userLocation = { city2: "Jaipur", country2: "India" };
+
+        	    let userAllData = { ...userInfo, ...userLocation };
+
+        	    console.log(userAllData);
+
+        	    if (userAllData.age > 25) {
+
+                    console.log("Employee is older than 25");
+
+                }
+
+        	    	else {
+
+        	            console.log("Employee is not older than 25");
+
+        	        }
+
+        	    // Basic for loop
+
+                for (let i = 0; i < 5; i++) {
+
+                    console.log(`For loop iteration: ${i}`);
+
+                }
+
+                // Basic for-in loop
+
+                for (let key in person1) {
+
+                    console.log(`Key: ${key}, Value: ${person1[key]}`);
+
+                }
+
+                // Basic for-of loop
+
+                let skills = ["JavaScript", "HTML", "CSS"];
+
+                for (let skill of skills) {
+
+                    console.log(`Skill: ${skill}`);
+
+                }
+
+                // Basic while loop
+
+                let count = 0;
+
+                while (count < 3) {
+
+                    console.log(`While loop count: ${count}`);
+
+                    count++;
+
+                }
+
+                // Basic do-while loop
+
+                let num = 0;
+
+                do {
+
+                    console.log(`Do-while loop number: ${num}`);
+
+                    num++;
+
+                } while (num < 3);
+
+                const add = function(a,b){
+
+            		return a+b;
+
+            		}
+
+            console.log(add(4,5));
+
+            const multiply = (x,y) => x*y;
+
+            console.log(multiply(12,23));
+
+            const cube =x =>x*x*x;
+
+            console.log(cube(5));
+
+            const greet = (name) => {
+
+                let message = `Hello, ${name}, Welcome`;
+
+                return message;
+
+            };
+
+            console.log(greet("logesh"));
+
+
+    function operate (num1,num2 , operation){
+
+    	return operation(num1,num2);
+
+    }
+
+    const multiply1 =(x,y)=>x*y;
+
+    const add1=(x,y) =>x+y;
+
+    console.log(operate(12,15,add1));
+
+    console.log(operate(12,15,multiply1));
+
+    function greeting(message) {
+
+        return function(name) {
+
+            console.log(`${message}, ${name}`);
+
+        };
+
+    }
+
+    const msg = greeting("Hello");
+
+    msg("Hello Logesh");
+
+    }
+
+    testOperators();
+
+
+    
+    
+    
+
+    
+    
+    
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+    <div class="container">
+        <div class="registration-box">
+            <h2>Registration</h2>
+           <marquee> <p>Welcome to  Online Book Store</p></marquee>
+            <form action="#">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+ 
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+ 
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+ 
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+ 
+                <button type="submit">Register</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+</body>
+
+<script>
+
+const hotelRooms = [
+    { type: "Standard", price: 5000, available: true },
+    { type: "Deluxe", price: 8000, available: true },
+    { type: "Suite", price: 12000, available: false },
+    { type: "Penthouse", price: 15000, available: true }
+];
+
+function findAvailableRooms(rooms, minPrice, maxPrice) {
+    return rooms
+        .filter(room => room.price >= minPrice && room.price <= maxPrice && room.available)
+        .map(room => ({
+            type: room.type,
+            price: room.price
+        }));
+}
+
+const availableRooms = findAvailableRooms(hotelRooms, 5000, 10000);
+console.log(availableRooms);
+
+
+
+const cartItems = [
+    { name: "Laptop", price: 5000, quantity: 1 },
+    { name: "Mouse", price: 300, quantity: 2 },
+    { name: "Keyboard", price: 800, quantity: 1 },
+    { name: "Monitor", price: 4000, quantity: 2 }
+];
+
+function generateReceipt(cart) {
+    let total = 0;
+    let receipt = 'Receipt:\n';
+    receipt += '----------------------------------\n';
+
+    cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        receipt += `${item.name} (x${item.quantity}): ₹${itemTotal.toFixed(2)}\n`;
+    });
+
+    receipt += '----------------------------------\n';
+    receipt += `Total: ₹${total}`;
+    return receipt;
+}
+
+const receipt = generateReceipt(cartItems);
+console.log(receipt);
+
+const student = { name: "Logesh", marks: { sci: 100, maths: 90, english: 90 } };
+
+function generateReportCard(student) {
+    const marks = student.marks;
+    const totalMarks = marks.sci + marks.maths + marks.english;
+    const averageMarks = totalMarks / 3;
+    const percentage = (totalMarks / 300) * 100;
+
+    return `Report Card for ${student.name}:
+----------------------------------
+Science: ${marks.sci}
+Maths: ${marks.maths}
+English: ${marks.english}
+----------------------------------
+Total Marks: ${totalMarks}
+Average Marks: ${averageMarks.toFixed(2)}
+Percentage: ${percentage.toFixed(2)}%
+----------------------------------`;
+}
+
+const reportCard = generateReportCard(student);
+console.log(reportCard);
+
+   
+
+</script>
+</html>
+
+

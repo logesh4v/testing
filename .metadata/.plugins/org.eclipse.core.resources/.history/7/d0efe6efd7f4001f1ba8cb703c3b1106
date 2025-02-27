@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Bookstore Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #0066cc, #33ccff);
+        }
+ 
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+ 
+        .registration-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+ 
+        h2 {
+            margin: 0;
+            color: #333;
+        }
+ 
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+ 
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+ 
+        label {
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+ 
+        input {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+ 
+        button {
+            background: #0066cc;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+ 
+        button:hover {
+            background: #004c99;
+        }
+ 
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+ 
+        .login-link a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+ 
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+ 
+function example(){
+ 
+	let  = 10;
+	if (true){
+		let y = 20 //  
+		console.log(y); 
+	}
+	y=10
+	console.log(y); //10
+}
+example();
+ 
+ 
+function logical() {
+	
+	console.log(5 == '5');  // Equal to 
+	console.log(5 === '5'); // Strict equal to (checks type and value)
+	 
+	console.log(5 != '5');  // Not equal
+	console.log(5 !== '5'); // Strict not equal 
+	 
+	// Logical Operators
+	console.log(5 > 3 && 5 > 2);  // AND 
+	console.log(5 > 3 || 5 < 2);  // OR 
+	console.log(!(5 > 3));        // NOT 
+	 
+	
+	let name = "Tanuj";
+	console.log("Hello " + name + ", Welcome!"); // Without template literals
+	 
+	
+	console.log(`Hello ${name}, Welcome!`);
+	 
+
+	let text1 = "This is a line.\n" + "This is another line.";
+	console.log(text1);
+	 
+
+	let text2 = `This is a line.
+	This is another line.`;
+	console.log(text2);
+	
+	let product = "Mobile";
+    let price = 35000;
+    console.log(`The price of ${product} is ${price}`);
+	 
+
+
+
+
+//String Methods
+let text = " JavaScript ";
+console.log(text.length);          // Returns string length
+console.log(text.toUpperCase());   // Converts to uppercase
+console.log(text.toLowerCase());   // Converts to lowercase
+console.log(text.trim());          // Removes spaces
+console.log(text.slice(2, 10));    // Extracts a portion of string (start, end)
+console.log(text.replace("Java", "Type")); // Replaces text
+ 
+// Split string into an array
+let textList = "value1, value2, value3";
+console.log(textList.split(",")); 
+ 
+// Arrays
+let numbers = [10, 20, 30, 40, 50];
+let gadgets = ["Laptop", "Smartphone", "TV"];
+ 
+// Array Methods
+gadgets.push("Earphone");       // Adds an item to the end
+console.log(gadgets);
+ 
+gadgets.pop();                  // Removes the last item
+console.log(gadgets);
+ 
+gadgets.shift();                 // Removes the first item
+console.log(gadgets);
+ 
+gadgets.unshift("Mic");         // Adds an item to the beginning
+console.log(gadgets);
+ 
+console.log(gadgets.indexOf("Smartphone")); // Finds index of an item
+console.log(gadgets.includes("Earphone"));  // Checks if item exists
+ 
+console.log(gadgets.slice(1, 2)); // Returns part of the array
+ 
+gadgets.splice(1, 2);            // Removes elements from index 1, count 2
+console.log(gadgets);
+ 
+console.log(gadgets.join("-"));  // Converts array into a string
+ 
+// Reverse and Sort
+console.log(numbers.reverse());  // Reverses the array
+console.log(numbers.sort());     // Sorts the array
+ 
+
+gadgets.forEach((gadget) => console.log(gadget));
+
+let squareNumbers = numbers.map(num => num * num);
+console.log(squareNumbers);
+logical();
+}
+
+function  testexample()
+let per = {
+    name: "Tanuj",
+    age: 25,
+    city: "HD",
+    hasvotercard: true
+  };
+  delete person.hasvotercard;
+  console.log(person); // { name: 'Tanuj', age: 25, city: 'HD' }
+  // Object with a function as a property
+  let user = {
+    name: "Inuj",
+    greet() {
+  console.log(`Hello, my name is ${this.name}`);
+    }
+  };
+  user.greet(); // Hello, my name is Inuj
+  // Object Destructuring
+  let { name, age, city } = person;
+  console.log(name); // Tanuj
+  console.log(age);  // 25
+  console.log(city); // HD
+  // Object Spread Operator - Copying an object
+  let obj1 = { a: 12, b: 15 };
+  let obj2 = { ...obj1, c: 20 };
+  console.log(obj2); // { a: 12, b: 15, c: 20 }
+  // Object Spread Operator - Merging objects
+  let userInfo = { name: "Tanuj", age: 25 };
+  let userLocation = { city: "HD", country: "India" };
+  let userAllData = { ...userInfo, ...userLocation };
+  console.log(userAllData);
+  // { name: 'Tanuj', age: 25, city: 'HD', country: 'India' }
+
+
+ 
+</script>
+
+    <div class="container">
+        <div class="registration-box">
+            <h2>Registration</h2>
+           <marquee> <p>Welcome to  Online Book Store</p></marquee>
+            <form action="#">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+ 
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+ 
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required>
+ 
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+ 
+                <button type="submit">Register</button>
+            </form>
+            <p class="login-link">Already have an account? <a href="#">Login</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
