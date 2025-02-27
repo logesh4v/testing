@@ -2378,3 +2378,5 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact mysql:mysql-c
 2025-02-27 15:58:24,045 [Worker-512: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-02-27 15:58:24,069 [Worker-512: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\703416466\Downloads\shop\shop\src\test\resources
 2025-02-27 15:58:46,184 [Worker-509: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-02-27 15:58:46,186 [Worker-509: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-02-27 15:58:46,208 [Worker-509: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\703416466\Downloads\shop\shop\src\test\resources
