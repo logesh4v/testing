@@ -846,3 +846,32 @@ Caused by: java.io.IOException: The pipe is being closed
 	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
 	... 12 more
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-28 15:30:02.480
+!MESSAGE [Info]	ESLint server running in node v16.9.0
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-02-28 15:30:18.883
+!MESSAGE [Error]	[tsserver] npm notice 
+npm notice New major version of npm available! 7.21.1 -> 11.1.0
+npm notice Changelog: <https://github.com/npm/cli/releases/tag/v11.1.0>
+npm notice Run `npm install -g npm@11.1.0` to update!
+npm notice 
+
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-28 15:50:33.340
+!MESSAGE [Info]	ESLint server running in node v16.9.0
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-02-28 17:17:44.602
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure.
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-02-28 17:17:44.708
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure. False expression.
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-02-28 17:17:44.932
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure. False expression.
+
+!ENTRY org.eclipse.lsp4e 4 0 2025-02-28 17:17:48.675
+!MESSAGE [Error]	Notification handler 'textDocument/didChange' failed with message: Debug Failure. False expression.
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-02-28 17:25:01.305
+!MESSAGE [Info]	ESLint server running in node v16.9.0
