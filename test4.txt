@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="heading">Welcome to JS</h1>
+    <p class="message">This is a message needed to be printed</p>
+    
+    <button id="btn">Change Heading</button>
+
+    <script>
+
+
+
+
+<body>
+    <h1 class="heading">Welcome to JavaScript</h1>
+    <p class="message">Welcome to JavaScript</p>
+    <button id="btn">Click Me</button>
+</body>
+ 
+<script>
+    function fetchData(callback) {
+        console.log("Fetching data...");
+        
+        setTimeout(() => {
+            let data = { name: "Steve", age: 25 };
+            callback(data);
+        }, 3000);
+    }
+ 
+    function processData(data) {
+        console.log("Processing data: ", data);
+    }
+ 
+    fetchData(processData);
+</script>
+
+
+</body>
+</html>

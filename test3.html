@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="heading">Welcome to JS</h1>
+    <p class="message">This is a message needed to be printed</p>
+    
+    <button id="btn">Change Heading</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const heading = document.getElementById("heading");
+            const message = document.querySelector(".message");
+            const button = document.querySelector("#btn");
+
+            function updateContent(callback) {
+                setTimeout(() => {
+                    if (heading) {
+                        console.log("Original Heading:", heading.textContent);
+                        heading.textContent = " New Content using the timer";
+                    }
+
+                    if (message) {
+                        message.innerHTML = "<strong>Updated Message</strong>";
+                    }
+
+                    if (callback) {
+                        callback();
+                    }
+                }, 1000); // Simulate async operation with a timeout
+            }
+
+            function additionalTask() {
+                console.log("Additional task after updating content Printing to test");
+                if (message) {
+                    message.style.color = "blue"; // Change the color of the message
+                }
+            }
+
+            function buttonClickHandler() {
+                return new Promise((resolve, reject) => {
+                    if (button) {
+                        button.addEventListener("click", () => {
+                            heading.textContent = "Heading Changed!";
+                            alert("Button Clicked!");
+                            resolve("Button clicked and heading changed");
+                        });
+                    } else {
+                        reject("Button not found");
+                    }
+                });
+            }
+
+            async function init() {
+                try {
+                    await updateContent(() => {
+                        console.log("Content updated");
+                        additionalTask();
+                    });
+                    await buttonClickHandler();
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            init();
+
+            if (button) {
+                button.addEventListener("mouseover", () => {
+                    button.style.backgroundColor = "pink";
+                });
+
+                button.addEventListener("mouseout", () => {
+                    button.style.backgroundColor = "red";
+                });
+
+                document.addEventListener("keypress", (event) => {
+                    console.log("Key Pressed:", event.key);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

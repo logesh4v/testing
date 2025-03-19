@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Operators Test</title>
+</head>
+<body>
+<h1>JavaScript Operators Test</h1>
+ 
+    <script>
+
+        function testOperators() {
+
+            // Arithmetic Operators
+
+
+            let name = "Logesh";
+
+            console.log("Hello, " + name + " Welcome");
+
+            name = "logesh";
+
+            console.log(`Hello, ${name} Welcome`);
+
+            let text = "This is line1. \n" + "This is line2.";
+
+            console.log(text);
+
+            text = `This is line1.
+
+			This is line2.`;
+
+            console.log(text);
+
+            let product = "Laptop";
+
+            let price = 55000;
+
+            console.log(`The price of ${product} is ${price}`);
+
+
+            let a = 10;
+
+            let b = 20;
+
+            let c = "20";
+
+            console.log('Arithmetic Operators:');
+
+            console.log('a + b =', a + b);
+
+            console.log('a - b =', a - b);
+
+            console.log('a * b =', a * b);
+
+            console.log('a / b =', a / b);
+
+            console.log('a % b =', a % b);
+
+            console.log('a++ =', a++);
+
+            console.log('++a =', ++a);
+
+            console.log('a-- =', a--);
+
+            console.log('--a =', --a);
+ 
+            
+
+            // Relational Operators
+
+            console.log('\nRelational Operators:');
+
+            console.log('a == b:', a == b);
+
+            console.log('b===c: ', b===c);
+
+            console.log('a != b:', a != b);
+
+            console.log('a > b:', a > b);
+
+            console.log('a < b:', a < b);
+
+            console.log('a >= b:', a >= b);
+
+            console.log('a <= b:', a <= b);
+ 
+            // Logical Operators
+
+            let x = true;
+
+            let y = false;
+
+            console.log('\nLogical Operators:');
+
+            console.log('x && y:', x && y);
+
+            console.log('x || y:', x || y);
+
+            console.log('!x:', !x);
+
+
+            let arr = [1, 6, 3, 4, 5];
+
+            arr.push(6); // Add element to the end
+
+            arr.unshift(0); // Add element to the beginning
+
+            let removedElement = arr.pop(); // Remove last element
+
+            let firstElement = arr.shift(); // Remove first element
+
+            let slicedArr = arr.slice(1, 3); // Slice array from index 1 to 3
+
+            let joinedArr = arr.join('-'); // Join array elements with '-'
+
+            let reversedArr = arr.reverse(); // Reverse the array
+
+            let mappedArr = arr.map(num => num * 2); // Map each element to its double
+
+            let sortedArr = arr.sort();
+
+            console.log('\nArray Operations:');
+
+            console.log('Original Array: [1, 6, 3, 4, 5]');
+
+            console.log('After push(6):', arr);
+
+            console.log('After unshift(0):', arr);
+
+            console.log('Removed Last Element (pop):', removedElement);
+
+            console.log('Removed First Element (shift):', firstElement);
+
+            console.log('Final Array:', arr);
+
+            console.log('Sliced Array (index 1 to 3):', slicedArr);
+
+            console.log('Joined Array (with "-"):', joinedArr);
+
+            console.log('Reversed Array:', reversedArr);
+
+            console.log('Mapped Array (elements doubled):', mappedArr);
+
+            console.log('Sorted Array (ascending):', sortedArr);
+
+            console.log('\nforEach Method:');
+
+            arr.forEach((element, index) => {
+
+                console.log(`Element at index ${index}: ${element}`);
+
+            });
+
+            let str = "Hello, Genpact!";
+
+            let upperStr = str.toUpperCase(); // Convert to uppercase
+
+            let lowerStr = str.toLowerCase(); // Convert to lowercase
+
+            let subStr = str.slice(0, 5); // Extract substring
+
+            let replacedStr = str.replace("Genpact", "World"); // Replace substring
+
+            let includesStr = str.includes("Genpact"); // Check if substring exists
+
+            let splitStr = str.split(", "); // Split string into array
+
+            console.log('\nString Methods:');
+
+            console.log('Original String:', str);
+
+            console.log('Uppercase:', upperStr);
+
+            console.log('Lowercase:', lowerStr);
+
+            console.log('Slice:', subStr);
+
+            console.log('Replaced String:', replacedStr);
+
+            console.log('Includes "Genpact":', includesStr);
+
+            console.log('Split String:', splitStr);
+
+
+            let person = {
+
+            	      name: "Logesh",
+
+            	      age: 23,
+
+            	      city: "Jaipur",
+
+            	      hasvotercard: true
+
+            	    };
+
+            	    delete person.hasvotercard;
+
+            	    console.log(person); 
+
+            	    let user = {
+
+            	      name3: "Mohan",
+
+            	      greet() {
+
+            	    console.log(`Hello, my name is ${this.name3}`);
+
+            	      }
+
+            	    };
+
+            	    user.greet();
+
+            	    let person1 = {
+
+            	            name4: "irfan",
+
+            	            age4: 24,
+
+            	            city4: "HD"
+
+            	        };
+
+            	    let { name4, age4, city4 } = person1;
+
+            	    console.log(name4); 
+
+            	    console.log(age4);  
+
+            	    console.log(city4); 
+
+            	    let obj1 = { a: 10, b: 15 };
+
+            	    let obj2 = { ...obj1, c: 20 };
+
+            	    console.log(obj2); 
+
+            	    let userInfo = { name2: "logesh", age2: 22 };
+
+            	    let userLocation = { city2: "Jaipur", country2: "India" };
+
+            	    let userAllData = { ...userInfo, ...userLocation };
+
+            	    console.log(userAllData);
+
+            	    if (userAllData.age > 25) {
+
+                        console.log("Employee is older than 25");
+
+                    }
+
+            	    	else {
+
+            	            console.log("Employee is not older than 25");
+
+            	        }
+
+            	    // Basic for loop
+
+                    for (let i = 0; i < 5; i++) {
+
+                        console.log(`For loop iteration: ${i}`);
+
+                    }
+ 
+                    // Basic for-in loop
+
+                    for (let key in person1) {
+
+                        console.log(`Key: ${key}, Value: ${person1[key]}`);
+
+                    }
+ 
+                    // Basic for-of loop
+
+                    let skills = ["JavaScript", "HTML", "CSS"];
+
+                    for (let skill of skills) {
+
+                        console.log(`Skill: ${skill}`);
+
+                    }
+ 
+                    // Basic while loop
+
+                    let count = 0;
+
+                    while (count < 3) {
+
+                        console.log(`While loop count: ${count}`);
+
+                        count++;
+
+                    }
+ 
+                    // Basic do-while loop
+
+                    let num = 0;
+
+                    do {
+
+                        console.log(`Do-while loop number: ${num}`);
+
+                        num++;
+
+                    } while (num < 3);
+
+                    const add = function(a,b){
+
+                		return a+b;
+
+                		}
+
+                console.log(add(4,5));
+
+                const multiply = (x,y) => x*y;
+
+                console.log(multiply(12,23));
+
+                const cube =x =>x*x*x;
+
+                console.log(cube(5));
+
+                const greet = (name) => {
+
+                    let message = `Hello, ${name}, Welcome`;
+
+                    return message;
+
+                };
+ 
+                console.log(greet("logesh"));
+
+
+        function operate (num1,num2 , operation){
+
+        	return operation(num1,num2);
+
+        }
+
+        const multiply1 =(x,y)=>x*y;
+
+        const add1=(x,y) =>x+y;
+
+        console.log(operate(12,15,add1));
+
+        console.log(operate(12,15,multiply1));
+
+        function greeting(message) {
+
+            return function(name) {
+
+                console.log(`${message}, ${name}`);
+
+            };
+
+        }
+
+        const msg = greeting("Hello");
+
+        msg("Hello Logesh");
+
+        }
+ 
+        testOperators();
+</script>
+</body>
+</html>
+ 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1 id="heading">Welcome to JS</h1>
+    <p class="message">This is a message needed to be printed</p>
+    
+    <button id="btn">Change Heading</button> 
+
+    <script>
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                console.log("Fetching data...");
+                
+                setTimeout(() => {
+                    let success = true;
+                    
+                    if (success) {
+                        resolve({ name: "logesh", age: 25 }); // Fulfills the promise
+                    } else {
+                        reject("Error: Failed to fetch data."); // Rejects the promise
+                    }
+                }, 3000);
+            });
+        } 
+
+        // Calling the function
+        fetchData()
+            .then((data) => {
+                console.log("Processing data: ", data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        // Using the promise
+        fetchData()
+            .then((data) => {
+                console.log("Processing Data:", data);
+                return { ...data, city: "cbe" }; // Adding neww
+            })
+            .then((updatedData) => {
+                console.log("Processing updated Data:", updatedData);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+        async function getData() {
+            console.log("Fetching Data . . .");
+            try {
+                let data = await fetchData();
+                console.log("Processing Data: ", data);
+                try {
+                    let data2 = { ...data, city: "dindigul" };
+                    console.log("Processing updated data: ", data2);
+                } catch (error) {
+                    console.log("Error: ", error);
+                }
+            } catch (error) {
+                console.log("Error: ", error);
+            }
+        }
+
+        getData();
+    </script>
+</body>
+</html>
+
